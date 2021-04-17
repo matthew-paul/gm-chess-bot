@@ -106,8 +106,13 @@ class ChessPiece:
 
         return
 
-    def update_square(self):
+    def update_square(self, x, y):
+        self.x = x
+        self.y = y
         self.square = square_map[get_square(self.x, self.y)]
+
+    def get_coords(self):
+        return get_square(self.x, self.y)
 
     def __str__(self):
         return f'{self.color}, {self.type}, {self.square}'
